@@ -15,7 +15,7 @@ import java.util.List;
 public class Student extends Person {
     private String id;
     private final List<Course> courses;
-    private String studentStatus;
+//    private String studentStatus;
     
     private static ArrayList<Student> AllStudents ;
 
@@ -38,21 +38,21 @@ public class Student extends Person {
         this.id = id;
     }
         
-    public void setStudentStatus(String studentStatus) throws IllegalArgumentException{
-        if (studentStatus == null || (!studentStatus.equalsIgnoreCase("rich") && 
-                                      !studentStatus.equalsIgnoreCase("middle") && 
-                                      !studentStatus.equalsIgnoreCase("poor"))) {
-            throw new IllegalArgumentException("Invalid student status: Status must be 'rich', 'middle', or 'poor'.");
-        }
-        this.studentStatus = studentStatus;
-    }
+//    public void setStudentStatus(String studentStatus) throws IllegalArgumentException{
+//        if (studentStatus == null || (!studentStatus.equalsIgnoreCase("rich") && 
+//                                      !studentStatus.equalsIgnoreCase("middle") && 
+//                                      !studentStatus.equalsIgnoreCase("poor"))) {
+//            throw new IllegalArgumentException("Invalid student status: Status must be 'rich', 'middle', or 'poor'.");
+//        }
+//        this.studentStatus = studentStatus;
+//    }
 
     public String getStudentStatus() {
         return studentStatus;
     }
 
     // Methods for course management
-    public void addCourse(Course Copy_course) {
+    public void addCourse(Course course) {
         if(course instanceof InteractiveCourse) {
         	if(course.getStudents().length() < course.maxNoOfStudents) {
         		courses.add(course); //add this course to the arraylist of student's courses
@@ -68,9 +68,9 @@ public class Student extends Person {
         	course.getStudents().add(this); //if it wasn't an interactive class 
         }
     }    
-    public void removeCourse(Course Copy_course) {
+    public void removeCourse(Course course) {
         
-        if(courses.contains(Copy_course)) {
+        if(courses.contains(course)) {
             this.courses.remove(course);		//remove this course from the arraylist of the student's courses
             course.getStudents().remove(this);	//remove this student from the course's arraylist of students	
             
@@ -90,9 +90,13 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-               "Student ID: " + id + "\n" +
-               "Student Status: " + studentStatus + "\n" +
-               "Courses: " + String.join(", ", courses);
+    	return "Name: " + name + "\n" +
+                "Number: " + mobile_number + "\n" +
+                "Address: " + address + "\n" +
+                "Gender: " + gender + "\n" +
+                "Nationality: " + nationality + "\n" +
+                "Student ID: " + id + "\n" +
+                "Student Status: " + studentStatus + "\n" +
+                "Courses: " + courses;
     }
 }

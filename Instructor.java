@@ -72,10 +72,14 @@ public class Instructor extends Person {
     // Override toString method
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-               "Graduation Year: " + graduationYear + "\n" +
-               "Graduation University: " + graduationUniversity + "\n" +
-               "Years of Experience: " + yearsOfExperience + "\n" +
-               "Courses Explained: " + String.join(", ", coursesExplained);
+    	return "Name: " + name + "\n" +
+                "Number: " + mobile_number + "\n" +
+                "Address: " + address + "\n" +
+                "Gender: " + gender + "\n" +
+                "Nationality: " + nationality + "\n" +
+                "Graduation Year: " + graduationYear + "\n" +
+                "Graduation University: " + graduationUniversity + "\n" +
+                "Years of Experience: " + yearsOfExperience + "\n" +
+                "Courses Explained: " +  coursesExplained;
     }
 }

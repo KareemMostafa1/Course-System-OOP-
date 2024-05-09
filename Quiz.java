@@ -266,17 +266,7 @@ public class Quiz {
         this.type = type;
     }
 
-    /**
-     * The different types of quizzes.
-     */
-    public enum Type {
-        /** Multiple choice questions */
-        MCQ,
-        /** Written questions */
-        WRITTEN,
-        /** A mix of multiple choice and written questions */
-        MIXED
-    }
+    
 }
 /*
 class Test {
@@ -308,17 +298,3 @@ class Test {
     }
 }*/
 
-class Chapter {
-    static int count;
-    int index;
-
-    public Chapter() {
-        count++;
-        index = count;
-    }
-
-    @Override
-    public String toString() {
-        return "Chapter " + index;
-    }
-}

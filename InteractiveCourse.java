@@ -29,19 +29,17 @@ public class InteractiveCourse extends Course implements Comparable<OnlineCourse
 	String getPlace() {
 		return Place;
 	}
-	double getPrice() {
-		return price;
-	}
+	
 	public int getSeatsAvailable() {
 	    return seatsAvailable;
 	}
 
-	public void setSeatsAvailable(int seatsAvailable) {
-	    if (seatsAvailable < 0 || seatsAvailable > maxNoOfStudents) {
-	        throw new IllegalArgumentException("Price cannot be negative or exceed max.available number");
-	    }
-	    this.seatsAvailable = seatsAvailable;
-	}
+//	public void setSeatsAvailable(int seatsAvailable) {
+//	    if (seatsAvailable < 0 || seatsAvailable > maxNoOfStudents) {
+//	        throw new IllegalArgumentException("seats available cannot be negative or exceed max.available number");
+//	    }
+//	    this.seatsAvailable = seatsAvailable;
+//	}
 
 	public ArrayList<String> getToolsNeeded() {
 	    return toolsNeeded;
@@ -49,22 +47,15 @@ public class InteractiveCourse extends Course implements Comparable<OnlineCourse
 
 	public void setToolsNeeded(ArrayList<String> toolsNeeded) {
 	    if (toolsNeeded == null) {
-	        throw new IllegalArgumentException("Quizzes ArrayList cannot be null.");
+	        throw new IllegalArgumentException("Tools needed ArrayList cannot be null.");
 	    }
 	    this.quizes = new ArrayList<>(toolsNeeded);
 	}
 	void setPlace(String Place) {
 	    if (Place == null || Place.isEmpty()) {
-	        throw new IllegalArgumentException("Course platform cannot be null or empty.");
+	        throw new IllegalArgumentException("Course place cannot be null or empty.");
 	    }
 	    this.Place = Place;
-	}
-
-	void setPrice(double price) {
-	    if (price < 0) {
-	        throw new IllegalArgumentException("Price cannot be negative.");
-	    }
-	    this.price = price;
 	}
 
 
@@ -87,7 +78,7 @@ public class InteractiveCourse extends Course implements Comparable<OnlineCourse
     }
 
 	@Override
-	public int compareTo(OnlineCourse o) {
+	public int compareTo(Course o) {
 		// TODO Auto-generated method stub
 		if (this.price==o.getPrice())
 			return 0;

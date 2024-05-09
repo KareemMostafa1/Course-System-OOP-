@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class OnlineCourse extends Course implements Comparable<OnlineCourse>,CourseProvider{
 	private String coursePlatform;
-	private boolean availableFinancialAid;
+	//private boolean availableFinancialAid;
 	
 
 	public OnlineCourse(String name , String courseId , String describtion, Quiz quiz, ArrayList<Instructor> instructors , ArrayList<Student> students,
@@ -12,7 +12,7 @@ public class OnlineCourse extends Course implements Comparable<OnlineCourse>,Cou
 		super(name,courseId,descrription, quiz , price , instructors , students , content, weeklyDate, coursePeriods);
 		// TODO Auto-generated constructor stub ((((a7a ya mohamed ya hussien)))))
 		this.coursePlatform=coursePlatform;
-		this.availableFinancialAid=false;
+		//this.availableFinancialAid=false;
 		
 	}		
 
@@ -26,10 +26,6 @@ public class OnlineCourse extends Course implements Comparable<OnlineCourse>,Cou
 	    }
 	    this.coursePlatform = coursePlatform;
 	}
-
-	
-	
-
 
     @Override
     public String toString() {
