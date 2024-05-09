@@ -29,6 +29,7 @@ public abstract class Course {
 		setCoursePeriod(coursePeriod);
 		setCourseId(courseId);
 		no_Courses++;
+		
 		AllCoursesAvailable.add(new Course(name , courseId , describtion , quiz , price , instructors , students , content , weeklyDate , coursePeriod))
 	
 	
@@ -46,7 +47,7 @@ public abstract class Course {
 	public String getDescribtion() {
 		return describtion;
 	}
-//	public Quiz getQuizes() {
+//	public Quiz getQuiz() {
 //		return quiz;
 //	}
 //	public ArrayList<Instructor> getInstructor() {
